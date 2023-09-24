@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/gradient_fear_of_swedish"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/vu_logo" />
+
+    <TextView
+        android:id="@+id/txtUserReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Registration"
+        android:textSize="34dp"
+        android:padding="20dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/logoImageView"/>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/txtUserReg"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="email"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/editTextUsername"/>
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/editTextEmail"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/editTextPhone"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btnRegUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:padding="10dp"
+
+        android:textSize="20dp"
+        android:layout_below="@id/editTextPassword"
+        android:background="@drawable/gradient_cold_war"/>
+
+</RelativeLayout>
