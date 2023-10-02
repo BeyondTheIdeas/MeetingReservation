@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ManagerMeetingsViewItem"></activity>
+        <activity android:name=".ManagerMeetingsViewItem"/>
         <activity android:name=".MeetingsView" />
         <activity android:name=".UserLogin" />
         <activity android:name=".MeetingsDetail" />
