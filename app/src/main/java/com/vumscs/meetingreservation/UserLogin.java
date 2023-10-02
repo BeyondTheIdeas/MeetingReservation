@@ -11,7 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ManagerLogin extends AppCompatActivity {
+public class UserLogin extends AppCompatActivity {
+
     EditText edEmail, edPassword;
     Button btnLogin;
     DBHandler dbHandler;
@@ -19,21 +20,21 @@ public class ManagerLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_login);
+        setContentView(R.layout.activity_user_login);
         dbHandler = new DBHandler(this);
-        edEmail = findViewById(R.id.userNameEditText);
+        edEmail = findViewById(R.id.emailEditText);
         edPassword = findViewById(R.id.passwordEditText);
-        btnLogin = findViewById(R.id.loginButton);
+        btnLogin.findViewById(R.id.loginButton);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                managerLogin();
+                loginUser();
 
             }
         });
     }
 
-    private void managerLogin()
+    private void loginUser()
     {
         String userName = edEmail.getText().toString();
         String password = edPassword.getText().toString();
@@ -59,11 +60,11 @@ public class ManagerLogin extends AppCompatActivity {
         Cursor cursor = null;
         try
         {
-            cursor = db.query("manager",
-                    projection,
-                    selection,
-                    selectionArgs,
-                    null, null, null);
+            cursor = db.query("user",
+                                    projection,
+                                    selection,
+                                    selectionArgs,
+                                null, null, null);
             if(cursor != null && cursor.getCount() >0)
             {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
@@ -84,6 +85,5 @@ public class ManagerLogin extends AppCompatActivity {
             }
             db.close();
         }
-
     }
 }

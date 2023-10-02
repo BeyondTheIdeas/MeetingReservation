@@ -13,25 +13,29 @@ public class DBHandler extends SQLiteOpenHelper {
     private static  final   String managersTable = "manager";
     private static  final   String meetingsTable = "meeting";
     private static  final   String meetingDesctable = "meeting_desc";
+    private static  final   String meetingActivityTable = "meeting_activity";
     private static  final   String feedbacksTable = "feedback";
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String userTable = "create table "+ usersTable + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                        "NAME TEXT, EMAIL TEXT, PHONE TEXT)";
+                        "NAME TEXT, EMAIL TEXT, PHONE TEXT, PASSWORD TEXT)";
         String managerTable = "create table "+managersTable+"(ID INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                                "NAME TEXT, EMAIL TEXT, PHONE TEXT)";
+                                "NAME TEXT, EMAIL TEXT, PHONE TEXT, PASSWORD TEXT)";
         String meetingTable = "create table "+meetingsTable+"(meeting_id integer PRIMARY KEY AUTOINCREMENT, "+
                                 "title TEXT, description TEXT, Date_Time DateTime, "+
-                                "Status TEXT, created_by integer, created_date date) ";
+                                "Status TEXT, created_by integer, created_date date, status TEXT) ";
         String meetingDesTable = "create table "+meetingDesctable+"(meeting_id INTEGER, user_id integer)";
+        String meetingActivity = "create table "+ meetingActivityTable+"(meeting_id INTEGER, user_id INTEGER, "+
+                                    "status TEXT, activity_date DATE)";
         String feedbackTable = "create table "+feedbacksTable+"(feedback_id INTEGER PRIMARY KEY AUTOINCREMENT, "+
                                 "comments TEXT) ";
         db.execSQL(userTable);
         db.execSQL(managerTable);
         db.execSQL(meetingDesTable);
         db.execSQL(meetingTable);
+        db.execSQL(meetingActivity);
         db.execSQL(feedbackTable);
     }
 

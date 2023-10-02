@@ -27,12 +27,12 @@
         />
 
     <EditText
-        android:id="@+id/cnicEditText"
+        android:id="@+id/userNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/logoImageView"
         android:layout_marginTop="90dp"
-        android:hint="CNIC"
+        android:hint="User Name"
         android:inputType="text"
         android:background="#ffffff"
         android:digits="0123456789-"/>
@@ -41,7 +41,7 @@
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cnicEditText"
+        android:layout_below="@id/userNameEditText"
         android:layout_marginTop="20dp"
         android:hint="Password"
         android:inputType="textPassword"
