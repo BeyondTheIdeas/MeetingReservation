@@ -25,12 +25,12 @@ public class DBHandler extends SQLiteOpenHelper {
                                 "NAME TEXT, EMAIL TEXT, PHONE TEXT, PASSWORD TEXT)";
         String meetingTable = "create table "+meetingsTable+"(meeting_id integer PRIMARY KEY AUTOINCREMENT, "+
                                 "title TEXT, description TEXT, Date_Time DateTime, "+
-                                "Status TEXT, created_by integer, created_date date, status TEXT) ";
+                                "Status TEXT, created_by integer, created_date date) ";
         String meetingDesTable = "create table "+meetingDesctable+"(meeting_id INTEGER, user_id integer)";
         String meetingActivity = "create table "+ meetingActivityTable+"(meeting_id INTEGER, user_id INTEGER, "+
                                     "status TEXT, activity_date DATE)";
         String feedbackTable = "create table "+feedbacksTable+"(feedback_id INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                                "comments TEXT) ";
+                                "comments TEXT, meeting_id integer, user_id integer) ";
         db.execSQL(userTable);
         db.execSQL(managerTable);
         db.execSQL(meetingDesTable);

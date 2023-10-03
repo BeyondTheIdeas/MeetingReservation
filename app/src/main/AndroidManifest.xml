@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ManagerMeetingsViewItem"/>
+        <activity android:name=".UsersUpcomingMeetings"></activity>
+        <activity android:name=".ManagerMeetingsViewItem" />
         <activity android:name=".MeetingsView" />
         <activity android:name=".UserLogin" />
         <activity android:name=".MeetingsDetail" />
@@ -25,7 +26,6 @@
         <activity android:name=".ManagerLogin" />
 
         <meta-data android:name="com.google.android.actions" />
-
 
         <activity
             android:name=".MainActivity"
