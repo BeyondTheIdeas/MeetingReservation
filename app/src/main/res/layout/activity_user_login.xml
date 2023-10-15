@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="#000000"
-    >
+    tools:context=".UserLogin">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -24,6 +25,7 @@
         android:textSize="32dp"
         android:gravity="center"
         android:background="@color/colorPrimary"
+        android:textColor="#fff"
         />
 
     <EditText
@@ -35,7 +37,8 @@
         android:hint="User Name"
         android:inputType="text"
         android:background="#ffffff"
-        android:digits="0123456789-"/>
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -45,7 +48,9 @@
         android:layout_marginTop="20dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:background="#ffffff"/>
+        android:background="#ffffff"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <Button
         android:id="@+id/loginButton"
@@ -53,7 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordEditText"
         android:layout_marginTop="16dp"
-
+        android:textSize="32dp"
+        android:background="@drawable/gradient_cold_war"
         android:text="Login" />
 
     <TextView
@@ -63,6 +69,16 @@
         android:layout_below="@id/loginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Forgot Password?" />
+        android:text="Forgot Password?"
+        android:textColor="#fff"/>
 
+    <TextView
+        android:id="@+id/txtUserSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgotPasswordTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textColor="#ffffff"
+        android:text="Sign Up"/>
 </RelativeLayout>

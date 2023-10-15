@@ -6,8 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/gradient_fear_of_swedish"
-    tools:context=".MainActivity">
+    tools:context=".UserRegistration">
+
+
+
+  <!--  <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"/>
+
+    </com.google.android.material.appbar.AppBarLayout> -->
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -24,16 +37,21 @@
         android:textSize="34dp"
         android:padding="20dp"
         android:layout_gravity="center"
-        android:layout_below="@id/logoImageView"/>
+        android:layout_below="@id/logoImageView"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
+        android:inputType="text"
         android:padding="20dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/txtUserReg"/>
+        android:layout_below="@id/txtUserReg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
 
     <EditText
@@ -41,18 +59,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone"
+        android:inputType="text"
         android:padding="20dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/editTextUsername"/>
+        android:layout_below="@id/editTextUsername"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:padding="20dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/editTextPhone"/>
+        android:layout_below="@id/editTextPhone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -62,7 +86,9 @@
         android:padding="20dp"
         android:layout_marginTop="10dp"
         android:layout_below="@id/editTextEmail"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <Button
         android:id="@+id/btnRegUser"

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.vumscs.meetingreservation">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="false"
@@ -11,33 +12,56 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UsersUpcomingMeetings"></activity>
-        <activity android:name=".ManagerMeetingsViewItem" />
-        <activity android:name=".MeetingsView" />
-        <activity android:name=".UserLogin" />
-        <activity android:name=".MeetingsDetail" />
-        <activity android:name=".SelectParticipants" />
-        <activity android:name=".ParticipantsItem" />
-        <activity android:name=".MeetingsItem" />
-        <activity android:name=".ManagersRegistration" />
-        <activity android:name=".UserRegistration" />
-        <activity android:name=".ManagerLogin" />
+        <activity android:name=".ManagerMeetingsViewItem" android:exported="true" tools:node="merge"  />
+        <activity android:name=".UsersUpcomingMeetings" android:exported="true" tools:node="merge" />
+        <activity android:name=".MeetingsView" android:exported="true" tools:node="merge" />
+       <activity android:name=".UserLogin" android:exported="true" tools:node="merge" android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MeetingsDetail" android:exported="true" tools:node="merge" />
+        <activity android:name=".SelectParticipants" android:exported="true" tools:node="merge" />
+        <activity android:name=".ParticipantsItem" android:exported="true" tools:node="merge" />
+        <activity android:name=".MeetingsItem" android:exported="true" tools:node="merge" />
+        <activity android:name=".ManagersRegistration" android:exported="true" tools:node="merge" />
+       <!-- <activity android:name=".UserRegistration" android:exported="true" tools:node="merge" /> -->
+        <activity android:name=".ManagerLogin" android:exported="true" tools:node="merge" android:theme="@style/AppTheme.NoActionBar" />
 
-        <meta-data android:name="com.google.android.actions" />
 
-        <activity
+
+        <!--<activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:node="merge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+
+       <activity
+            android:name=".UserRegistration"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:node="merge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+      <!--  <activity
+            android:name=".UserRegistration"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:node="merge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> -->
     </application>
 
 </manifest>

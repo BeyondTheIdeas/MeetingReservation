@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 
 public class UserRegistration extends AppCompatActivity {
@@ -17,21 +21,29 @@ public class UserRegistration extends AppCompatActivity {
     private EditText edUserName, edPhone, edPassword, edEmail;
     private Button btnRegistration;
     private DBHandler dbHandler;
+    //Toolbar toolbar;
+
+    //@Override
+   /*public void setSupportActionBar(@Nullable Toolbar toolbar) {
+        super.setSupportActionBar(toolbar);
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
         edUserName = findViewById(R.id.editTextUsername);
-        edPassword = findViewById(R.id.passwordEditText);
+        edPassword = findViewById(R.id.editTextPassword);
         edPhone = findViewById(R.id.editTextPhone);
         edEmail = findViewById(R.id.editTextEmail);
         btnRegistration = findViewById(R.id.btnRegUser);
         dbHandler = new DBHandler(this);
+        //toolbar = findViewById(R.id.toolbar);
 
         btnRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                registerUser();
 
             }
         });
@@ -79,8 +91,10 @@ public class UserRegistration extends AppCompatActivity {
             {
                 Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
                 // Redirect to the login activity or other appropriate action
-                startActivity(new Intent(this, UserLogin.class));
-                finish();
+                //startActivity(new Intent(this, UserLogin.class));
+                Intent intent = new Intent(UserRegistration.this, UserLogin.class);
+                startActivity(intent);
+                //finish();
             }
             else
             {

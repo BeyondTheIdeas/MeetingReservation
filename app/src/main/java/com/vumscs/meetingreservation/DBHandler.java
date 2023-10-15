@@ -4,17 +4,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHandler extends SQLiteOpenHelper {
-    private static final String DB_NAME = "coursedb";
+    private static  String DB_NAME = "coursedb";
 
     // below int is our database version
-    private static final int DB_VERSION = 1;
+    private static  int DB_VERSION = 1;
 
-    private static  final   String usersTable = "user";
-    private static  final   String managersTable = "manager";
-    private static  final   String meetingsTable = "meeting";
-    private static  final   String meetingDesctable = "meeting_desc";
-    private static  final   String meetingActivityTable = "meeting_activity";
-    private static  final   String feedbacksTable = "feedback";
+    private static     String usersTable = "user";
+    private static     String managersTable = "manager";
+    private static     String meetingsTable = "meeting";
+    private static     String meetingDesctable = "meeting_desc";
+    private static     String meetingActivityTable = "meeting_activity";
+    private static     String feedbacksTable = "feedback";
 
 
     @Override

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/gradient_health_first"
-    >
+    tools:context=".ManagerLogin">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -35,7 +36,8 @@
         android:hint="User Name"
         android:inputType="text"
         android:background="#ffffff"
-        android:digits="0123456789-"/>
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -45,7 +47,9 @@
         android:layout_marginTop="20dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:background="#ffffff"/>
+        android:background="#ffffff"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <Button
         android:id="@+id/loginButton"

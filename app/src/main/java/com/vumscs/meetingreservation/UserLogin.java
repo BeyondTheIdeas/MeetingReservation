@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,19 +18,34 @@ public class UserLogin extends AppCompatActivity {
     EditText edEmail, edPassword;
     Button btnLogin;
     DBHandler dbHandler;
+    TextView txtSignup, txtHeading, txtForgotPassword;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_user_login);
         dbHandler = new DBHandler(this);
+        imageView = findViewById(R.id.logoImageView);
+        txtHeading = findViewById(R.id.managerLoginTextView);
+        txtForgotPassword = findViewById(R.id.forgotPasswordTextView);
         edEmail = findViewById(R.id.emailEditText);
         edPassword = findViewById(R.id.passwordEditText);
-        btnLogin.findViewById(R.id.loginButton);
+        btnLogin = findViewById(R.id.loginButton);
+        txtSignup = findViewById(R.id.txtUserSignup);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUser();
+
+            }
+        });
+
+        txtSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signUp();
 
             }
         });
@@ -85,5 +102,12 @@ public class UserLogin extends AppCompatActivity {
             }
             db.close();
         }
+    }
+
+    private void signUp()
+    {
+        Intent intent = new Intent(this, UserRegistration.class);
+        startActivity(intent);
+        finish();
     }
 }
