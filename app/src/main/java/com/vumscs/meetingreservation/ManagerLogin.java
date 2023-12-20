@@ -67,7 +67,9 @@ public class ManagerLogin extends AppCompatActivity {
             if(cursor != null && cursor.getCount() >0)
             {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent intent = new Intent(ManagerLogin.this, ManagerHome.class);
+                startActivity(intent);
+                //finish();
             }
             else {
                 Toast.makeText(this, "Invalid username or password.", Toast.LENGTH_SHORT).show();

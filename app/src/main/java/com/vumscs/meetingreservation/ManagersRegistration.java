@@ -25,7 +25,7 @@ public class ManagersRegistration extends AppCompatActivity {
         userNameText = findViewById(R.id.editTextUsername);
         emailText = findViewById(R.id.editTextEmail);
         phoneText = findViewById(R.id.editTextPhone);
-        passwordText = findViewById(R.id.passwordEditText);
+        passwordText = findViewById(R.id.editTextPassword);
         btnRegister = findViewById(R.id.btnRegManager);
         dbHandler = new DBHandler(this);
 
@@ -78,7 +78,7 @@ public class ManagersRegistration extends AppCompatActivity {
                 Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
                 // Redirect to the login activity or other appropriate action
                 startActivity(new Intent(this, ManagerLogin.class));
-                finish();
+                //finish();
             }
             else
             {

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#000000">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="18sp"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:id="@+id/txtNewMet"/>
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter title"
+        android:inputType="text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#ffffff"
+        android:textColor="#000000"
+        android:layout_below="@+id/txtNewMet"/>
+
+    <!-- Meeting Date and Time -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meeting Date"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:id="@+id/txtDate"
+        android:layout_below="@+id/etTitle"/>
+
+    <EditText
+        android:id="@+id/etMeetingDate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Select date and time"
+        android:focusable="true"
+        android:layout_marginBottom="16dp"
+        android:focusableInTouchMode="true"
+        android:background="#ffffff"
+        android:textColor="#000000"
+        android:layout_below="@id/txtDate"
+        />
+
+    <!-- Description -->
+
+    <Button
+        android:id="@+id/btnSelDate"
+        style="@style/CustomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etMeetingDate"
+        android:layout_toEndOf="@+id/etMeetingDate"
+        android:layout_toRightOf="@+id/etMeetingDate"
+        android:text="Select Date"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meeting Date"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:id="@+id/txtTime"
+        android:layout_below="@+id/etMeetingDate"/>
+
+    <EditText
+        android:id="@+id/etMeetingTime"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Select time"
+        android:focusable="true"
+        android:layout_marginBottom="16dp"
+        android:focusableInTouchMode="true"
+        android:background="#ffffff"
+        android:textColor="#000000"
+        android:layout_below="@id/txtTime"
+        />
+
+    <!-- Description -->
+
+    <Button
+        android:id="@+id/btnSelTime"
+        style="@style/CustomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etMeetingTime"
+        android:layout_toEndOf="@+id/etMeetingTime"
+        android:layout_toRightOf="@+id/etMeetingTime"
+        android:text="Select Time"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:id="@+id/txtDesc"
+        android:layout_below="@id/txtTime"/>
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter description"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#ffffff"
+        android:textColor="#000000"
+        android:layout_below="@+id/txtDesc"/>
+
+    <!-- Create Meeting Button -->
+    <Button
+        android:id="@+id/btnCreateMeeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Meeting"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        style="@style/CustomButton"
+        android:layout_below="@id/etDescription"/>
+
+</RelativeLayout>

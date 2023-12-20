@@ -39,6 +39,13 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(feedbackTable);
     }
 
+    public void CreateMeeting(Meetings meetings, SQLiteDatabase db)
+    {
+        String query = "insert into "+meetingsTable + "(title, description, Date_Time, Status, created_by, created_date) "+
+                        "values('"+meetings.getTitle()+"', '"+meetings.getTitle()+"', '"+meetings.getDateTime() + "', '"+meetings.getStatus() + "', '"+meetings.getCreatedBy() +"', datetime())";
+        db.execSQL(query);
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         String dropStatement = "DROP TABLE IF EXIST ";

@@ -19,7 +19,7 @@ import android.os.Bundle;
 public class UserRegistration extends AppCompatActivity {
 
     private EditText edUserName, edPhone, edPassword, edEmail;
-    private Button btnRegistration;
+    private Button btnRegistration, btnLogin;
     private DBHandler dbHandler;
     //Toolbar toolbar;
 
@@ -37,6 +37,7 @@ public class UserRegistration extends AppCompatActivity {
         edPhone = findViewById(R.id.editTextPhone);
         edEmail = findViewById(R.id.editTextEmail);
         btnRegistration = findViewById(R.id.btnRegUser);
+        btnLogin  = findViewById(R.id.btnLoginUser);
         dbHandler = new DBHandler(this);
         //toolbar = findViewById(R.id.toolbar);
 
@@ -47,6 +48,19 @@ public class UserRegistration extends AppCompatActivity {
 
             }
         });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
+
+            }
+        });
+    }
+
+    private void login(){
+        Intent intent = new Intent(UserRegistration.this, UserLogin.class);
+        startActivity(intent);
     }
 
     private  void registerUser()

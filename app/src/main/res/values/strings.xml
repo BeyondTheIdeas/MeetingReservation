@@ -3,8 +3,8 @@
     <string name="app_name">MeetingReservation</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Welcome</string>
+    <string name="nav_header_subtitle">Meeting Reservation</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -24,4 +24,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="enter_participant_names_comma_separated">Enter participant names (comma-separated)</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>

@@ -11,13 +11,14 @@ public class Meetings {
     private List<String> participants;
     private String createdBy;
     private String id;
+    private String description;
 
     public Meetings()
     {
 
     }
 
-    public Meetings(String id, String title, String date, String time, List<String> participants, String createdBy, String status)
+    public Meetings(String id, String title, String date, String time, List<String> participants, String createdBy, String status, String description)
     {
         this.createdBy = createdBy;
         this.date = date;
@@ -26,6 +27,7 @@ public class Meetings {
         this.title = title;
         this.status = status;
         this.id = id;
+        this.description = description;
     }
 
     public String getTitle()
@@ -61,6 +63,8 @@ public class Meetings {
         return createdBy;
     }
 
+    public String getDescription(){return description;}
+
     public void setTitle(String title)
     {
         this.title = title;
@@ -84,5 +88,10 @@ public class Meetings {
     public void setId(String id)
     {
         this.id = id;
+    }
+
+    public void setDescription(String description)
+    {
+        this.description = description;
     }
 }

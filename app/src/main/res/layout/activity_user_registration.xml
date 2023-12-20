@@ -101,4 +101,15 @@
         android:layout_below="@id/editTextPassword"
         android:background="@drawable/gradient_cold_war"/>
 
+  <Button
+      android:id="@+id/btnLoginUser"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Sign In"
+      android:padding="10dp"
+
+      android:textSize="20dp"
+      android:layout_below="@id/btnRegUser"
+      android:background="@drawable/gradient_cold_war"/>
+
 </RelativeLayout>
