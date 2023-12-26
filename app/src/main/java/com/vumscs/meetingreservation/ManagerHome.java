@@ -20,12 +20,16 @@ public class ManagerHome extends AppCompatActivity {
         btnAddMeeting = findViewById(R.id.btnAddMeetingPage);
         btnViewMeeting = findViewById(R.id.btnViewMeetingPage);
         btnAddMeeting.setOnClickListener(v -> newActivity("N"));
+        btnViewMeeting.setOnClickListener(v -> newActivity("V"));
     }
 
     private void newActivity(String type){
         Intent intent = null;
         if(type == "N"){
             intent = new Intent(ManagerHome.this,NewMeeting.class);
+        }
+        else{
+            intent = new Intent(ManagerHome.this, ManagerMeetingsView.class);
         }
         startActivity(intent);
     }

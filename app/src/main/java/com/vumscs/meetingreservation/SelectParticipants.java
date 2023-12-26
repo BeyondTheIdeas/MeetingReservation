@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class SelectParticipants extends AppCompatActivity {
     private List<Participants> participantList;
     private ParticipantsAdapter participantAdapter;
     private Button buttonAddParticipants;
+    DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +26,23 @@ public class SelectParticipants extends AppCompatActivity {
 
         recyclerViewParticipants = findViewById(R.id.recyclerViewParticipants);
         buttonAddParticipants = findViewById(R.id.buttonAddParticipants);
+        dbHandler = new DBHandler(this);
+        participantList = dbHandler.getAllParticipants();
+        participantAdapter = new ParticipantsAdapter(participantList,SelectParticipants.this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SelectParticipants.this,RecyclerView.VERTICAL,false);
+        recyclerViewParticipants.setLayoutManager(linearLayoutManager);
 
-        participantList = new ArrayList<>();
-        participantList.add(new Participants("1","Participant 1", "participant1@example.com", false));
+        recyclerViewParticipants.setAdapter(participantAdapter);
+        /*participantList.add(new Participants("1","Participant 1", "participant1@example.com", false));
         participantList.add(new Participants("2","Participant 2", "participant2@example.com", false));
         // Add more participants as needed
 
         participantAdapter = new ParticipantsAdapter(participantList);
         recyclerViewParticipants.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewParticipants.setAdapter(participantAdapter);
+        //recyclerViewParticipants.setAdapter(participantAdapter);
+
+        ArrayAdapter<Participants> adapter = new ArrayAdapter<>(this, R.layout.activity_meetings_item,participantList);
+        //recyclerViewParticipants.setAdapter(adapter);*/
 
         buttonAddParticipants.setOnClickListener(new View.OnClickListener() {
             @Override

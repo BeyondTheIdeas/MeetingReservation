@@ -12,6 +12,7 @@ public class Meetings {
     private String createdBy;
     private String id;
     private String description;
+    private String dateTime;
 
     public Meetings()
     {
@@ -30,6 +31,12 @@ public class Meetings {
         this.description = description;
     }
 
+    public Meetings(String id, String title, String dateTime){
+        this.id = id;
+        this.title = title;
+        this.dateTime = dateTime;
+    }
+
     public String getTitle()
     {
         return title;
@@ -45,11 +52,19 @@ public class Meetings {
         return time;
     }
 
+    public String getId(){
+        return id;
+    }
+
     public String getDateTime()
     {
         String date = getDate();
         String time = getTime();
         String dateTime = date + " " + time;
+        return dateTime;
+    }
+
+    public String  getDateTimes(){
         return dateTime;
     }
     public String getStatus(){ return status;}

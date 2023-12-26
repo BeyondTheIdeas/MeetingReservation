@@ -1,4 +1,5 @@
 package com.vumscs.meetingreservation;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,15 @@ import java.util.List;
 public class ParticipantsAdapter extends RecyclerView.Adapter<ParticipantsAdapter.ParticipantsViewHolder> {
 
     private List<Participants> participantList;
+    private Context context;
 
     public ParticipantsAdapter(List<Participants> participantList) {
         this.participantList = participantList;
+    }
+
+    public ParticipantsAdapter(List<Participants> participantList, Context context){
+        this.participantList = participantList;
+        this.context = context;
     }
 
     @NonNull
@@ -56,7 +63,7 @@ public class ParticipantsAdapter extends RecyclerView.Adapter<ParticipantsAdapte
             super(itemView);
             checkBoxParticipant = itemView.findViewById(R.id.checkBoxParticipant);
             textViewName = itemView.findViewById(R.id.textViewName);
-            textViewEmail = itemView.findViewById(R.id.textViewEmail);
+            //textViewEmail = itemView.findViewById(R.id.textViewEmail);
         }
     }
 }

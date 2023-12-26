@@ -80,10 +80,18 @@ public class NewMeeting extends AppCompatActivity {
         try {
             insert = db.insert("meeting",null,values);
             if(insert>0){
-                Toast.makeText(this,"Meeting Created, Now add Participants",Toast.LENGTH_LONG).show();
-                Intent i = new Intent(NewMeeting.this, MeetingsDetail.class);
-               // i.putExtra("mid",insert);
-                startActivity(i);
+                //long dt = dbHandler.addMeetingDetails()
+                long dt = dbHandler.addMeetingDetails((int)insert,dbHandler.getAllParticipants());
+                if(dt>0){
+                    Toast.makeText(this,"Meeting Created",Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(NewMeeting.this, ManagerHome.class);
+                    // i.putExtra("mid",insert);
+                    startActivity(i);
+                }
+                else {
+                    Toast.makeText(this,"Unable to Create Meeting",Toast.LENGTH_LONG).show();
+                }
+
             }
             else {
                 Toast.makeText(this,"Unable to Create Meeting",Toast.LENGTH_LONG).show();

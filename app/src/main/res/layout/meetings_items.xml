@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/gradient_cold_war">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMeetingId"
+        android:gravity="center_vertical"
+        android:text="Meeting Id"
+        style="@style/CustomButton"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMeetingName"
+        android:gravity="center_vertical"
+        android:text="Meeting Name"
+        style="@style/CustomButton"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/txtMeetingId"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtMeetingDateTime"
+        android:gravity="center_vertical"
+        android:text="Meeting Date Time"
+        style="@style/CustomButton"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/txtMeetingName"
+        />
+
+</RelativeLayout>
