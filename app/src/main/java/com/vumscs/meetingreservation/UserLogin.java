@@ -75,6 +75,7 @@ public class UserLogin extends AppCompatActivity {
         String selection = "NAME = ? AND PASSWORD = ?";
         String[] selectionArgs = {userName, password};
         Cursor cursor = null;
+        String ids = "";
         try
         {
             cursor = db.query("user",
@@ -82,10 +83,18 @@ public class UserLogin extends AppCompatActivity {
                                     selection,
                                     selectionArgs,
                                 null, null, null);
-            if(cursor != null && cursor.getCount() >0)
+            if(cursor != null && cursor.moveToFirst())
             {
+                do{
+                    ids = cursor.getString(0);
+
+                }
+                while (cursor.moveToNext());
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(UserLogin.this, UserHome.class);
+                Intent intent = new Intent(UserLogin.this, UserHomePage.class);
+                UsersSessionManager sessionManager = new UsersSessionManager(this);
+
+                sessionManager.saveUserId(Integer.parseInt(ids));
                 //intent.putExtra("user_name", userName);
                 startActivity(intent);
                 //finish();

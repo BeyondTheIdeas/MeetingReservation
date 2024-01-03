@@ -15,6 +15,7 @@ public class ManagerLogin extends AppCompatActivity {
     EditText edEmail, edPassword;
     Button btnLogin;
     DBHandler dbHandler;
+    ManagersSessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class ManagerLogin extends AppCompatActivity {
         edEmail = findViewById(R.id.userNameEditText);
         edPassword = findViewById(R.id.passwordEditText);
         btnLogin = findViewById(R.id.loginButton);
+        sessionManager = new ManagersSessionManager(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +59,7 @@ public class ManagerLogin extends AppCompatActivity {
         String selection = "NAME = ? AND PASSWORD = ?";
         String[] selectionArgs = {userName, password};
         Cursor cursor = null;
+        String ids = "";
         try
         {
             cursor = db.query("manager",
@@ -64,8 +67,14 @@ public class ManagerLogin extends AppCompatActivity {
                     selection,
                     selectionArgs,
                     null, null, null);
-            if(cursor != null && cursor.getCount() >0)
+            if(cursor != null && cursor.moveToFirst())
             {
+                do {
+                    ids = cursor.getString(0);
+                    sessionManager.saveManagerId(Integer.parseInt(ids));
+                }
+                while (cursor.moveToNext());
+
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ManagerLogin.this, ManagerHome.class);
                 startActivity(intent);

@@ -94,6 +94,30 @@ public class DBHandler extends SQLiteOpenHelper {
         return meetimgList;
     }
 
+    public ArrayList<Meetings> getMeetingsForParticipants(int participantId){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Meetings> meetingsLst = new ArrayList<>();
+        Cursor cursor = null;
+        try {
+            final String query = "select m.meeting_id, m.title, m.Date_Time from " + meetingsTable +
+                    " m inner join " + meetingDesctable + " d " +
+                    "where m.meeting_id = d.meeting_id and " +
+                    "d.user_id = ?";
+            cursor = db.rawQuery(query,new String[]{String.valueOf(participantId)});
+            if(cursor.moveToFirst()){
+                do{
+                    meetingsLst.add(new Meetings(cursor.getString(0),cursor.getString(1), cursor.getString(2)));
+                }
+                while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        catch (SQLException ex){
+            throw ex;
+        }
+        return meetingsLst;
+    }
+
     public ArrayList<Participants> getAllParticipants(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor pc = db.rawQuery("SELECT * FROM "+usersTable,null);

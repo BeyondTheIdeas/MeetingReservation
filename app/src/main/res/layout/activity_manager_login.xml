@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/gradient_health_first"
+    android:background="#000000"
     tools:context=".ManagerLogin">
 
     <ImageView
@@ -30,26 +30,29 @@
     <EditText
         android:id="@+id/userNameEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/logoImageView"
         android:layout_marginTop="90dp"
         android:hint="User Name"
         android:inputType="text"
         android:background="#ffffff"
         android:focusable="true"
-        android:focusableInTouchMode="true"/>
+        android:focusableInTouchMode="true"
+        android:textSize="30dp"
+        />
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/userNameEditText"
         android:layout_marginTop="20dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:background="#ffffff"
         android:focusable="true"
-        android:focusableInTouchMode="true"/>
+        android:focusableInTouchMode="true"
+        android:textSize="30dp"/>
 
     <Button
         android:id="@+id/loginButton"
@@ -58,8 +61,10 @@
         android:layout_below="@id/passwordEditText"
         android:layout_marginTop="16dp"
         android:textSize="32dp"
-        android:background="@drawable/gradient_cold_war"
-        android:text="Login" />
+        style="@style/CustomButton"
+        android:text="Login"
+        android:textAlignment="center"
+        />
 
     <TextView
         android:id="@+id/forgotPasswordTextView"

@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Manager Home Page"
-        android:textSize="50sp"
+        android:textSize="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:textColor="#ffffff"
@@ -25,12 +25,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/tvHeading"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:id="@+id/layoutLoginManager">
 
         <!-- Button 1 -->
         <Button
             android:id="@+id/btnAddMeetingPage"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Create Meeting"
@@ -41,7 +42,7 @@
         <!-- Button 2 -->
         <Button
             android:id="@+id/btnViewMeetingPage"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="View Meeting"
@@ -50,5 +51,22 @@
             style="@style/CustomButton"
             />
 
+
+
     </LinearLayout>
+    <Button
+        android:id="@+id/btnLogoutManager"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textAlignment="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        style="@style/CustomButton"
+        android:layout_below="@+id/layoutLoginManager"
+
+
+        />
+
 </RelativeLayout>
