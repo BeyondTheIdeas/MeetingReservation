@@ -95,9 +95,11 @@ public class NewMeeting extends AppCompatActivity {
         try {
             insert = db.insert("meeting",null,values);
             if(insert>0){
+                Intent intent = new Intent(NewMeeting.this, SelectUsersForMeeting.class);
+                startActivity(intent);
                 //long dt = dbHandler.addMeetingDetails()
-                long dt = dbHandler.addMeetingDetails((int)insert,dbHandler.getAllParticipants());
-                if(dt>0){
+                //long dt = dbHandler.addMeetingDetails((int)insert,dbHandler.getAllParticipants());
+                /*if(dt>0){
                    // addNotification();
 
                     Intent i = new Intent(NewMeeting.this, ManagerHome.class);
@@ -121,7 +123,7 @@ public class NewMeeting extends AppCompatActivity {
                                 .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_launcher_background));
                                // .setContentIntent(pendingIntent);
                         Toast.makeText(this,"Meeting Created",Toast.LENGTH_LONG).show();
-                    }
+                    }*/
 
                     // i.putExtra("mid",insert);
                     //startActivity(i);
@@ -131,11 +133,11 @@ public class NewMeeting extends AppCompatActivity {
                     Toast.makeText(this,"Unable to Create Meeting",Toast.LENGTH_LONG).show();
                 }
 
-            }
-            else {
+            //}
+            /*else {
                 Toast.makeText(this,"Unable to Create Meeting",Toast.LENGTH_LONG).show();
-            }
-            notificationManager.notify(1234,builder.build());
+            }*/
+            //notificationManager.notify(1234,builder.build());
         }
         catch (SQLException ex)
         {

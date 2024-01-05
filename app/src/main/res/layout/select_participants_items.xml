@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <CheckBox
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/chkSelPart"
+            android:layout_marginLeft="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColor="#000"
+
+
+            >
+
+        </CheckBox>
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSelUserId"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/chkSelPart">
+
+        </TextView>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSelUserName"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:layout_toRightOf="@+id/txtSelUserId"
+            android:layout_marginTop="20dp">
+
+        </TextView>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

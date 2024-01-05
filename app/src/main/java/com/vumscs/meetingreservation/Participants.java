@@ -26,6 +26,8 @@ public class Participants {
         return isSelected;
     }
 
+    public String getParticipantId(){return id;}
+
     public void setSelected(boolean selected) {
         isSelected = selected;
     }
